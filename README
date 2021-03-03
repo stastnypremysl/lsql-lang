@@ -1,0 +1,3 @@
+Library for processing LSQL (Lapidary Structured Query Language) language. It does the whole syntactical analysis and returns term tree.
+
+Please refer to the package description on Hackage for more information.

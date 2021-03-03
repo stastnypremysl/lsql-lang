@@ -1,0 +1,47 @@
+cabal-version:       3.0
+
+name:                lsql-lang
+version:             0.1.0.0
+
+synopsis:            Lexer and parser for the LSQL language
+description:         Library for processing LSQL (Lapidary Structured Query Language) language. It does the whole syntactical analysis and returns term tree.
+
+homepage:            https://github.com/stastnypremysl/lsql-lang
+bug-reports:         https://github.com/stastnypremysl/lsql-lang/issues
+
+license:             LGPL-3.0-only
+license-file:        LICENSE
+author:              Přemysl Šťastný
+maintainer:          p-w@stty.cz
+category:            lexers parsers
+
+build-type:          Simple
+extra-source-files:  CHANGELOG.md README.md
+
+common deps
+  ghc-options: -Wall -Wextra
+  default-language:    Haskell2010
+  build-depends:       base >=4.14 && <4.15, 
+                       parsec >=3.1 && < 3.2,
+                       text >= 1.2 && <1.3,
+                       curly-expander >= 0.2 && <0.3
+
+library
+  import: deps
+  exposed-modules: 
+    Lsql.Lang,
+    Lsql.Lang.Tokens,
+    Lsql.Lang.Terms,
+    Lsql.Lang.Tokenizer,
+    Lsql.Lang.Parser,
+    Lsql.Lang.Expander
+
+
+source-repository head
+  type: git
+  location: https://github.com/stastnypremysl/curly-expander
+
+source-repository this
+  type: git
+  location: https://github.com/stastnypremysl/curly-expander
+  tag: 0.1.0.0
